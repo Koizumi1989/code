@@ -1,0 +1,158 @@
+<!-- htmlとはページの要素や構造をブラウザに伝えるための言語-->
+<!-- 下に行けば行くほど、最新情報であり、重要性が高い情報となる為、下の方が優先される-->
+
+<!-- htmlがどのバージョンで書かれているかを宣言している-->
+<!DOCTYPE html>
+
+<html lang="ja">
+
+  <!--　ブラウザや検索エンジンに伝えたい情報を記載するエリア　ページには表示されない！！ -->
+  <head>
+
+    <!-- 文字の処理方法　文字化け防止-->
+    <meta charset="UTF-8"/>
+
+    <!-- レスポンシブ対応　デバイス変更に伴うレイアウト変更に対応（画面の幅等自動で切り替え　-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- FontAwesomeの読み込みは下記へ　サイトからkit→53fcd7bbf7で下記表示される　-->
+    <script src="https://kit.fontawesome.com/53fcd7bbf7.js" crossorigin="anonymous"></script>
+
+        <!-- cssの読み込み -->
+        <!-- 一つ下のフォルダにファイルある時　<link rel="stylesheet" href="フォルダ名/style.css"/>　-->
+        <!-- 一つ上のフォルダにファイルある時　<link rel="stylesheet" href="../style.css"/>　-->
+        <!-- 二つ上のフォルダにファイルある時　<link rel="stylesheet" href="../../style.css"/>　-->
+        <link rel="stylesheet" href="style.css"/>
+
+        <title>code-list</title>
+  </head>
+
+<!-- 主な要素　インライン要素　ブロック要素　-->
+※右記以外は大体ブロック要素　※ 主なinline要素:a span strong img input textarea i br等　
+※inlineは背景は中身のあるところまでしか伸びない※　width height指定不可　※　margin paddin　左右のみきく　※
+　　
+
+<!-- html 構成-->
+    <!-- header用のdiv -->
+    <div class="header"></div>
+    <!-- main-visual用のdiv -->
+    <div class="main-visual"></div>
+    <!-- main用のdiv -->
+    <div class="main">
+      <div class="sidebar-left"></div>
+      <div class="blog"></div>
+      <div class="sidebar-right"></div>
+    </div>
+    <!-- footer用のdiv -->
+    <div class="footer"></div>
+
+<!-- 上段：header head heading top -->
+<!-- ナビゲーションリンク：nav headerではない！-->
+<!-- 子要素に文章や節（h1、pとか）を入れる際：section -->
+<!-- 中心：main content mainArea mainContent mainBox-->
+<!-- 中心サイド：side sidebar sideOne menu sideContent-->
+<!-- 下段：footer bottom footerArea bottomArea-->
+<!-- クラス名　box -->
+
+  <body><!-- 実際にブラウザに表示されるコンテンツ-->
+
+
+    <!-- ブロック要素：縦に積み上がっていく。行全体に広がる為、空きがあっても必ず改行される。-->
+    <!-- インライン要素；横並びになる。行のp中の一部のまとまり。インライン要素内にブロック要素は配置できない。-->
+    <!-- インラインブロック要素：display:inline-block; flex使わずに横並び可能-->
+
+
+    <h1>サービス紹介</h1> <!-- 見出し　1〜6まで　1章　2節 -->
+    <h2>Webcamp pro</h2>
+    <p>マンツーマンサポートによる学習で、確実に・・・</p> <!-- 段落 -->
+    <br> <!-- 改行　-->
+    <div>Web</div> <!-- 意味はない　ブロック要素　-->
+    <p><span class="place">渋谷駅</span>で待ち合わせ。</p> <!-- CSSで渋谷駅を赤文字　インライン要素　-->
+
+    <!-- 記載例---------------------------------------------------------------------------------　-->
+    <!-- 基本の書き方 -->
+    <header>
+      <h1><a href="http://infratop.jp/">infratop</a></h1>
+    </header>
+
+    <h1>サービス紹介</h1>
+    <h2>webcamp</h2>
+    <p>マンツーマンサポートによる学習で、確実にWebスキルを習得できるプログラミングスクールです。</p>
+    <a href="https://web-camp.io/">webサイト</a>
+
+    <footer>
+      <p class="footer-text">© All rights reserved by Infratop.Inc.</p>
+    </footer>
+
+    <!-- id 同じページで1回しか使えない　-->
+    <p id="word-red">この文章だけ赤</p>
+
+    <!-- BOX作成　CSSで画像入れたりと色々な使い方。　-->
+    <div class="main">
+      <div class="box1"></div>
+      <div class="box2"></div>
+    </div>
+
+    <!-- class -->
+    <div class="box1"><div class="box2"></div></div>
+    <p class="word-red">この文章だけ赤</p>
+    <h2 class="sidebar-heding common-heding">この文章だけ赤</h2><!-- 一つのタグに二つのクラス指定　cssは二つ書く-->
+
+    <!-- 章タイトルをlink表示 -->
+    <h1><a href="https://web-camp.io/">webサイト</a></h1>
+
+    <!-- 子要素の入れ方　-->
+    <div class="header">
+      <div class="header-top"></div>
+      <div class="header-bottom"></div>
+    </div>
+
+ 　　<!-- ナビゲーションリンク　-->
+ 　　<nav>
+      <ul class="nav-list"><!-- ul:・から始まるリスト　ol:１から始まるリスト　どちらもliとセットで使う-->
+        <li class="nav-list-item"><!-- list-itemの略　-->
+          <a href="index.html">Home</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- section 子要素にh1、p使う時は、section (divと同じだが一応使い分ける)-->
+    <!-- spanとdivの違い　displayがblockとなっているかinlineとなっているかの違い。逆にdivのdisplayをinlineにしたらspanと同じ意味　-->
+    <section class="main-visual">
+      <h1 class="headline">サービス紹介</h1>
+    </section>
+    <main>
+      <section class="service1">
+        <h2><img src="img/wc-logo.png" alt="ロゴ" /></h2>
+        <p>
+          マンツーマンサポートによる学習で、<br />確実にWebスキルを習得できるプログラミングスクールです。
+        </p>
+        <a href="https://web-camp.io/">webサイト</a>
+      </section>
+      </main>
+
+    <!-- ロゴ画像の挿入　-->
+    <img src="img/wc-logo.png" alt="ロゴ" />
+
+    <!-- FontAwesome使ってアイコンを-->
+    <div class="social">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-twitter-square"></i>
+      <i class="fab fa-instagram-square"></i>
+    </div> ※アイコンが重なってしまう場合、CSS確認social iにポジション指定してないか？ social(枠に指定する)
+    <!-- ダブルクオテーション内がサイトからとったコード-->
+
+    <!-- メディアクエリ　※レスポンシブ対応記述（デバイスの変更に伴うレイアウト変更に対応）-->
+    <!-- 下記の例はデバイスの変更に伴うアイコンの色変更　CSSに記載　-->
+    <i class="fab fa-facebook-square" change></i>
+
+    <!-- ボタン作成　-->
+    <div class="button">
+      <span>詳細はこちら</span><i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- 記載例---------------------------------------------------------------------------------　-->
+
+ </body>
+
+</html>
